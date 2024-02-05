@@ -1141,23 +1141,18 @@
       });
     </script>
     <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const urlParams = new URLSearchParams(window.location.search);
-        const nama = encodeURIComponent(urlParams.get("n")) || "";
-        const pronoun =
-          encodeURIComponent(urlParams.get("p")) || "Bapak/Ibu/Saudara/i";
+  document.addEventListener("DOMContentLoaded", function () {
+    const urlParams = new URLSearchParams(window.location.search);
+    const nama = encodeURIComponent(urlParams.get("n")) || "NamaDefault";
+    const pronoun = encodeURIComponent(urlParams.get("p")) || "Bapak/Ibu/Saudara/i";
 
-        const namaContainer = document.querySelector(".hero h4 span");
-        if (namaContainer) {
-          namaContainer.textContent = `${pronoun} ${nama}${nama ? "," : ""}`;
-        }
+    const spanElement = document.querySelector("h4 span");
 
-        const inputNama = document.querySelector("#nama");
-        if (inputNama) {
-          inputNama.value = nama;
-        }
-      });
-    </script>
-   <script id="dsq-count-scr" src="//wedding-fikri-feni.disqus.com/count.js" async></script>
-  </body>
+    if (spanElement) {
+      spanElement.textContent = `${pronoun} ${nama}${nama ? "," : ""}`;
+    }
+  });
+</script>
+
+    </body>
 </html>
